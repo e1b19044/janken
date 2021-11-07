@@ -3,12 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <title>HTML入門-フォームの作成</title>
+  <title>じゃんけんゲーム</title>
 </head>
 
 <body>
   <h1>Lec02 GET!</h1>
-  <p>Hi [[${login_user}]]</p>
+  <div th:if="${login_user}">Hi [[${login_user}]]</div>
+
+  <a href="/lec02/janken?hand=Gu">ぐー</a>
+  <a href="/lec02/janken?hand=Choki">ちょき</a>
+  <a href="/lec02/janken?hand=Pa">ぱー</a>
+  <div th:if="${Result}">
+    あなたの手 [[${Yourhand}]]<br />
+    相手の手 [[${CPUhand}]]<br />
+    結果 [[${Result}]]
+  </div>
 </body>
 
 </html>
