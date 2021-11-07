@@ -12,15 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/lec02")
 public class Lec02Controller {
 
-  /**
-   *
-   * @param name
-   * @param model
-   * @return
-   */
-  @PostMapping
-  public String lec02(@RequestParam String name,ModelMap model){
-    model.addAttribute("login_user", name);
+  @GetMapping
+  public String lec02(){
     return "lec02.html";
   }
 
