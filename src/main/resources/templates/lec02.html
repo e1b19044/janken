@@ -7,9 +7,20 @@
 </head>
 
 <body>
+  <a href="/logout">ログアウト</a>
   <h1>Lec02 GET!</h1>
-  <div th:if="${login_user}">Hi [[${login_user}]]</div>
 
+  <div th:if="${entry}">
+    <p>エントリー</p>
+  </div>
+
+  <div th:if="${entry}">
+    <ul>
+      <li th:each="user : ${entry.users}">[[${user}]]</li>
+    </ul>
+  </div>
+
+  <div th:if="${login_user}">Hi [[${login_user}]]</div>
   <a href="/lec02/janken?hand=Gu">ぐー</a>
   <a href="/lec02/janken?hand=Choki">ちょき</a>
   <a href="/lec02/janken?hand=Pa">ぱー</a>
