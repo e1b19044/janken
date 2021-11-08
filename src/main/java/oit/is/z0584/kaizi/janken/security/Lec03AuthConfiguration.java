@@ -23,6 +23,7 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
     // プログラム中に素のパスワードが含まれることになるので望ましくない
     auth.inMemoryAuthentication().withUser("user1").password(passwordEncoder().encode("p@ss")).roles("USER");
     auth.inMemoryAuthentication().withUser("user2").password(passwordEncoder().encode("p@ss")).roles("USER");
+    auth.inMemoryAuthentication().withUser("ほんだ").password(passwordEncoder().encode("p@ss")).roles("USER");
   }
 
   @Bean
@@ -45,5 +46,8 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
 
     // Spring Securityの機能を利用してログアウト．ログアウト時は http://localhost:8080/ に戻る
     http.logout().logoutSuccessUrl("/");
+
+    http.csrf().disable();
+    http.headers().frameOptions().disable();
   }
 }
