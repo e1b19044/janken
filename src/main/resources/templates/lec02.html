@@ -20,6 +20,19 @@
     </ul>
   </div>
 
+  <a href="/lec02/lec04">ユーザー一覧</a>
+
+  <div th:if="${users4}">
+    <tr th:each="user4:${users4}">
+      <td>ID:[[${user4.id}]]</td>
+      <td>ユーザ名:[[${user4.name}]]</td>
+    </tr>
+  </div>
+
+
+
+
+
   <div th:if="${login_user}">Hi [[${login_user}]]</div>
   <a href="/lec02/janken?hand=Gu">ぐー</a>
   <a href="/lec02/janken?hand=Choki">ちょき</a>
